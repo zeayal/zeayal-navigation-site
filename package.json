@@ -6,9 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prisma": "npx prisma"
   },
   "dependencies": {
+    "@prisma/client": "^5.0.0",
     "@types/node": "20.4.3",
     "@types/react": "18.2.15",
     "@types/react-dom": "18.2.7",
@@ -18,6 +20,7 @@
     "ethers": "^6.6.4",
     "next": "13.4.12",
     "postcss": "8.4.27",
+    "prisma": "^5.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.10.1",

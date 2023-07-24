@@ -12,26 +12,26 @@ export default function Header() {
     })
     const { disconnect } = useDisconnect()
    
-    if (isConnected)
-      return (
-        <div>
-          Connected to {address}
-          <button onClick={() => disconnect()}>Disconnect</button>
-        </div>
-      )
-    return <button onClick={() => connect()}>Connect Wallet</button>
+    // if (isConnected)
+    //   return (
+    //     <div>
+    //       Connected to {address}
+    //       <button onClick={() => disconnect()}>Disconnect</button>
+    //     </div>
+    //   )
+    // return <button onClick={() => connect()}>Connect Wallet</button>
 
     return (
         <section className="w-screen h-12 flex flex-row justify-between items-center px-5 border-b">
             <div className="flex flex-row items-center">
                 <Icons.logo fontSize={30} />
-                <span className="ml-2">{siteConfig.siteName}</span>
+                <span className="ml-2">{siteConfig.title}</span>
             </div>
             <div>
-                <div  className="flex flex-row items-center">
+                {/* <div  className="flex flex-row items-center">
                     <Icons.wallet fontSize={30} />
-                    <span  className="ml-2">连接</span>
-                </div>
+                    <span  className="ml-2">登录</span>
+                </div> */}
             </div>
         </section>
     )
