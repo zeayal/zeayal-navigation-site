@@ -37,48 +37,7 @@ function MovieCard(props: { movie: Movie }) {
   );
 }
 
-export default function Top250({ movieList }: { movieList: Movie[] }) {
-  //   const [movieList, setMovieList] = useState<Movie[]>([]);
-
-  //   useEffect(() => {
-  //     const getList = async () => {
-  //       // https://api.wmdb.tv/api/v1/top?type=Imdb&skip=0&limit=50&lang=Cn
-  //       const res = await fetch(
-  //         "https://api.wmdb.tv/api/v1/top?type=Imdb&skip=0&limit=250&lang=Cn",
-  //       );
-  //       if (res.status === 200) {
-  //         const list = await res.json();
-  //         setMovieList(list);
-  //         return list;
-  //       }
-  //       return [];
-  //     };
-  //     getList();
-  //   }, []);
-
-  //   const getList = async () => {
-  //     // https://api.wmdb.tv/api/v1/top?type=Imdb&skip=0&limit=50&lang=Cn
-  //     const res = await fetch(
-  //       "https://api.wmdb.tv/api/v1/top?type=Imdb&skip=0&limit=250&lang=Cn",
-  //     );
-  //     if (res.status === 200) {
-  //       const list = await res.json();
-  //       return list;
-  //     }
-  //     return [];
-  //   };
-  //   const movieList: Movie[] = await getList();
-
-  return (
-    <div className="grid auto-rows-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-      {movieList.map((movie) => (
-        <MovieCard key={movie.id} movie={movie} />
-      ))}
-    </div>
-  );
-}
-
-export async function getServerSideProps() {
+export default async function Top250() {
   const getList = async () => {
     // https://api.wmdb.tv/api/v1/top?type=Imdb&skip=0&limit=50&lang=Cn
     const res = await fetch(
@@ -90,10 +49,13 @@ export async function getServerSideProps() {
     }
     return [];
   };
-  const movieList = await getList();
-  return {
-    props: {
-      movieList,
-    },
-  };
+  const movieList: Movie[] = await getList();
+
+  return (
+    <div className="grid auto-rows-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+      {movieList.map((movie) => (
+        <MovieCard key={movie.id} movie={movie} />
+      ))}
+    </div>
+  );
 }
