@@ -12,7 +12,7 @@ async function MarkDownRender({
 
   return (
     <div
-      className="markdown-body min-h-screen min-w-[300px] p-10"
+      className="light:markdown-body-light dark:markdown-body-dark markdown-body min-h-screen min-w-[300px] p-10"
       dangerouslySetInnerHTML={{ __html: contentHtml }}
     />
   );
