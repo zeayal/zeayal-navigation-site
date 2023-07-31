@@ -15,12 +15,10 @@ const config = createConfig({
   }),
 });
 
-export default function Home() {
+export default function Home(props) {
   return (
     <main className="flex min-h-screen flex-col items-center">
-      <IconContext.Provider
-        value={{ }}
-      >
+      <IconContext.Provider value={{}}>
         <WagmiConfig config={config}>
           <Header />
           <HomeContent />
