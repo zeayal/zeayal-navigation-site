@@ -18,14 +18,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <link
-        rel="stylesheet"
-        precedence="default"
-        href={siteConfig.iconfontCssUrl}
-      />
+      <link rel="stylesheet" href={siteConfig.iconfontCssUrl} />
 
       <body className={inter.className}>
-        <Providers>{children} </Providers>
+        <Providers>
+          <>{children}</>
+        </Providers>
       </body>
     </html>
   );

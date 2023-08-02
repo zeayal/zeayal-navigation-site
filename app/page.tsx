@@ -15,7 +15,7 @@ const config = createConfig({
   }),
 });
 
-export default function Home(props) {
+export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center">
       <IconContext.Provider value={{}}>

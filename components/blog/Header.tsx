@@ -5,7 +5,6 @@ import { ModeToggle } from "./ModeToggle";
 function Logo({ ...props }) {
   return (
     <svg
-      t="1690646528474"
       className="icon"
       viewBox="0 0 1024 1024"
       version="1.1"

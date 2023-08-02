@@ -3,7 +3,7 @@ import { PrismaClient } from "@prisma/client";
 
 const prismaClient = new PrismaClient();
 
-export async function GET(request: Request, context: { params }) {
+export async function GET(request: Request, context: { params: { id: string } }) {
   const categories = await prismaClient.category.findUnique({
     where: {
       id: +context.params.id,
